@@ -1,14 +1,14 @@
 @url = http://localhost:3000/rating
 
-### Get All Rates
+### Get All Ratings
 GET {{url}}
 
 
-### Get Single Rates
+### Get Single Ratings
 GET {{url}}/61b77c34bb7968b1c861e5aa
 
 
-### Create Rate
+### Create Rating
 POST {{url}}
 Content-Type: application/json
 
@@ -20,7 +20,7 @@ Content-Type: application/json
 }
 
 
-### Update Rate
+### Update Rating
 PUT {{url}}/61b77c34bb7968b1c861e5aa
 Content-Type: application/json
 
@@ -29,5 +29,5 @@ Content-Type: application/json
 }
 
 
-### Remove Rate
+### Remove Rating
 DELETE {{url}}/61b77cd6bb7968b1c861e5b9

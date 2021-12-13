@@ -5,7 +5,7 @@ GET {{url}}
 
 
 ### Get Single Rates
-GET {{url}}/61b34e126b402c445a1a15bd
+GET {{url}}/61b77c34bb7968b1c861e5aa
 
 
 ### Create Rate
@@ -13,22 +13,21 @@ POST {{url}}
 Content-Type: application/json
 
 {
-    "productId": 1236,
-    "userId": 1236,
-    "score": 2,
-    "message": "Ótimo produto!"
+    "productId": 5678,
+    "userId": 5678,
+    "score": 3,
+    "message": "Meio ruinzinho"
 }
 
 
 ### Update Rate
-PUT {{url}}/61b34e126b402c445a1a15bd
+PUT {{url}}/61b77c34bb7968b1c861e5aa
 Content-Type: application/json
 
 {
-    "productId": 1234,
-    "score": 2
+    "score": 3
 }
 
 
 ### Remove Rate
-DELETE {{url}}/61b34e126b402c445a1a15bd
+DELETE {{url}}/61b77cd6bb7968b1c861e5b9

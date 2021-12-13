@@ -1,0 +1,34 @@
+@url = http://localhost:3000/rating
+
+### Get All Rates
+GET {{url}}
+
+
+### Get Single Rates
+GET {{url}}/61b34e126b402c445a1a15bd
+
+
+### Create Rate
+POST {{url}}
+Content-Type: application/json
+
+{
+    "productId": 1236,
+    "userId": 1236,
+    "score": 2,
+    "message": "Ótimo produto!"
+}
+
+
+### Update Rate
+PUT {{url}}/61b34e126b402c445a1a15bd
+Content-Type: application/json
+
+{
+    "productId": 1234,
+    "score": 2
+}
+
+
+### Remove Rate
+DELETE {{url}}/61b34e126b402c445a1a15bd

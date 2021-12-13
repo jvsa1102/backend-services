@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "trabalho",
+    "host": "127.0.0.1",
+    "port": "3306",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "czvomrpe",
+    "password": "EQm0tqYl6yCQ0MHU7aMoU1OeNj4yZiTf",
+    "database": "czvomrpe",
+    "host": "tuffi.db.elephantsql.com",
+    "dialect": "postgresql"
+  },
+  "production": {
+    "username": "czvomrpe",
+    "password": "EQm0tqYl6yCQ0MHU7aMoU1OeNj4yZiTf",
+    "database": "czvomrpe",
+    "host": "tuffi.db.elephantsql.com",
+    "dialect": "postgresql"
+  }
+}

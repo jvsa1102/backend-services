@@ -1,6 +1,6 @@
 @base = http://localhost:3000/order
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoiQWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNCIsImlzX2FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIxLTEyLTEwVDIxOjU1OjM2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIxLTEyLTEwVDIxOjU1OjM2LjAwMFoifSwibG9nZ2VkSW4iOiIyMDIxLTEyLTEzVDE2OjEwOjM4LjMwM1oiLCJleHBpcmVzSW4iOiIyMDIxLTEyLTE0VDE2OjEwOjM4LjMwM1oiLCJpYXQiOjE2Mzk0MTE4MzgsImV4cCI6MTYzOTQ5ODIzOH0.6ahUnuKl_udo4U7gzdNhU3b_bsnychwxsEomd0MC7cs
-@non_admin = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJuYW1lIjoiYWFhYSIsImVtYWlsIjoiYWFhQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNCIsImlzX2FkbWluIjpmYWxzZSwiY3JlYXRlZEF0IjoiMjAyMS0xMi0xMVQwMDo0ODozNi4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMS0xMi0xMVQwMDo0ODozNi4wMDBaIn0sImxvZ2dlZEluIjoiMjAyMS0xMi0xM1QxNjowOTowOS45MDdaIiwiZXhwaXJlc0luIjoiMjAyMS0xMi0xNFQxNjowOTowOS45MDdaIiwiaWF0IjoxNjM5NDExNzQ5LCJleHAiOjE2Mzk0OTgxNDl9.MiIJVbnngxz5aRGvvDhRC3svxBWWBNmzND2tI2ibzGY
+@non_admin = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJuYW1lIjoiYWFhYSIsImVtYWlsIjoiYWFhQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNCIsImlzX2FkbWluIjpmYWxzZSwiY3JlYXRlZEF0IjoiMjAyMS0xMi0xMVQwMDo0ODozNi4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMS0xMi0xMVQwMDo0ODozNi4wMDBaIn0sImxvZ2dlZEluIjoiMjAyMS0xMi0xM1QxODowMToyOC44MzRaIiwiZXhwaXJlc0luIjoiMjAyMS0xMi0xNFQxODowMToyOC44MzRaIiwiaWF0IjoxNjM5NDE4NDg4LCJleHAiOjE2Mzk1MDQ4ODh9._453dW5vKaGlitD2dAInL65mKeYBHhliM-Dh43OV0gk
 
 ### Get Current Order
 GET {{base}}
@@ -8,13 +8,13 @@ Authorization: {{non_admin}}
 
 
 ### Add item to Order
-POST {{base}}/items
+POST {{base}}/products
 Content-Type: application/json
-Authorization: {{token}}
+Authorization: {{non_admin}}
 
 {
     "productId": 1,
-    "amount": 4
+    "amount": 3
 }
 
 

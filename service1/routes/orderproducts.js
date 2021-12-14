@@ -20,21 +20,21 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/products', async (req, res) => {
-    const { productId, amount } = req.body;
+    const { product_id, amount } = req.body;
 
     if (amount < 1) return res.status(400).json()
 
-    let product = await Product.findByPk(productId);
+    let product = await Product.findByPk(product_id);
     if (!product) return res.status(400).json()
 
-    let item = await OrderProduct.findOne({ where: { orderId: req.order.id, productId, cost: product.cost } });
+    let item = await OrderProduct.findOne({ where: { order_id: req.order.id, product_id, cost: product.cost } });
     try {
 
         if (item) {
         var newAmount = amount + item.amount;
         await item.update({ amount: newAmount });
         } else {
-        await OrderProduct.create({ orderId: req.order.id, productId, amount, cost: product.cost });
+        await OrderProduct.create({ order_id: req.order.id, product_id, amount, cost: product.cost });
         }
 
         await updateOrderCost(req.order);
@@ -50,7 +50,7 @@ router.post('/products', async (req, res) => {
 router.delete('/products/:id', async (req, res) => {
     const { amount } = req.body;
 
-    let item = await OrderProduct.findOne({ where: { id: req.params.id, orderId: req.order.id } });
+    let item = await OrderProduct.findOne({ where: { id: req.params.id, order_id: req.order.id } });
     if (!item) return res.status(400).json({ message: 'Invalid item.' });
 
     if (amount < -1) return res.status(400).json({ message: 'Invalid amount.' });
@@ -73,7 +73,7 @@ router.delete('/products/:id', async (req, res) => {
 });
 
 // Pay Cart
-router.put('/pay', async (req, res) => {
+router.put('/payment', async (req, res) => {
     if (req.order.total_price == 0.0) return res.status(400).json({ message: 'Nothing to be paid.' });
 
     try {

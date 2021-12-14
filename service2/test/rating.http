@@ -15,8 +15,8 @@ Content-Type: application/json
 {
     "productId": 5678,
     "userId": 5678,
-    "score": 3,
-    "message": "Meio ruinzinho"
+    "score": 5,
+    "message": "Ótimo"
 }
 
 
@@ -25,9 +25,9 @@ PUT {{url}}/61b77c34bb7968b1c861e5aa
 Content-Type: application/json
 
 {
-    "score": 3
+    "score": 5
 }
 
 
 ### Remove Rating
-DELETE {{url}}/61b77cd6bb7968b1c861e5b9
+DELETE {{url}}/61b77c34bb7968b1c861e5aa

@@ -9,6 +9,9 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var ordersRouter = require('./routes/orders');
 var orderRouter = require('./routes/orderproducts');
+var cors = require('cors');
+
+
 
 var app = express();
 
@@ -17,6 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors())
 
 const jwt_authenticate = require('./middlewares/jwt_authenticate');
 const user_authorize = require('./middlewares/user_authorize');

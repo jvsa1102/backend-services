@@ -6,7 +6,7 @@ const { Product } = require('../database/models');
 const jwt_authenticate = require('../middlewares/jwt_authenticate');
 const user_authorize = require('../middlewares/user_authorize');
 
-router.get('/', jwt_authenticate, user_authorize, async (req, res, next) => {
+router.get('/', /*jwt_authenticate, user_authorize,*/ async (req, res, next) => {
     return res.json(await Product.findAll());
 });
 

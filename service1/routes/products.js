@@ -29,13 +29,13 @@ router.post('/', jwt_authenticate, user_authorize, async (req, res) => {
 });
 
 router.put('/:id', jwt_authenticate, user_authorize, async (req, res) => {
-    const { name, cost } = req.body;
+    const { name, cost, image } = req.body;
 
     let product = await Product.findByPk(req.params.id);
     if (!product) return res.status(404).json()
 
     try {
-        await product.update({ name, cost });
+        await product.update({ name, cost, image });
         return res.json(product);
     } catch (e) {
         console.log(e);

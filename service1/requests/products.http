@@ -1,5 +1,5 @@
 @base = http://localhost:3000/products
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNCIsImlzX2FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIxLTEyLTE0VDAyOjI2OjMwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIxLTEyLTE0VDAyOjI2OjMwLjAwMFoifSwibG9nZ2VkSW4iOiIyMDIxLTEyLTE0VDE3OjEwOjQwLjg1MloiLCJleHBpcmVzSW4iOiIyMDIxLTEyLTE1VDE3OjEwOjQwLjg1MloiLCJpYXQiOjE2Mzk1MDE4NDAsImV4cCI6MTYzOTU4ODI0MH0.rlFZ-pY8XsC0mEEuDCO-Dz2O3IiT6ePvWgPEJAioOqk
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoiQWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNCIsImlzX2FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIxLTEyLTEwVDIxOjU1OjM2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIxLTEyLTEwVDIxOjU1OjM2LjAwMFoifSwibG9nZ2VkSW4iOiIyMDIxLTEyLTE0VDE3OjQzOjU5LjQzMVoiLCJleHBpcmVzSW4iOiIyMDIxLTEyLTE1VDE3OjQzOjU5LjQzMVoiLCJpYXQiOjE2Mzk1MDM4MzksImV4cCI6MTYzOTU5MDIzOX0.rot7sn9TCG4pecFXroIHkoKOkQwI211BDoz0vKvHALQ
 @non_admin = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJuYW1lIjoidXNlciIsImVtYWlsIjoidXNlckBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQiLCJpc19hZG1pbiI6ZmFsc2UsImNyZWF0ZWRBdCI6IjIwMjEtMTItMTRUMDI6MjY6NDUuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMTItMTRUMDI6MjY6NDUuMDAwWiJ9LCJsb2dnZWRJbiI6IjIwMjEtMTItMTRUMTY6NTk6MzQuNDQ5WiIsImV4cGlyZXNJbiI6IjIwMjEtMTItMTVUMTY6NTk6MzQuNDQ5WiIsImlhdCI6MTYzOTUwMTE3NCwiZXhwIjoxNjM5NTg3NTc0fQ.qiRbb7e02RMWZznetCkZokj16L2XCQshbUaZ_LzhDgM
 
 ### Create Product
@@ -8,8 +8,9 @@ Content-Type: application/json
 Authorization: {{token}}
 
 {
-    "name": "Carro",
-    "cost": 20000.65
+    "name": "Smartphone",
+    "cost": 200,
+    "image": "https://a-static.mlcdn.com.br/1500x1500/smartphone-samsung-galaxy-s20-fe-128gb-cloud-navy-4g-6gb-ram-tela-65-cam-tripla-selfie-32mp/magazineluiza/155629800/0007bbdc665749ec107d860c3a4b8b2f.jpg"
 }
 
 ### List all Products
@@ -21,12 +22,21 @@ GET {{base}}/1
 Authorization: {{token}}
 
 ### Update Product
-PUT {{base}}/2
+PUT {{base}}/5
 Authorization: {{token}}
 Content-Type: application/json
 
 {
-    "name": "TV"
+    "image": "https://a-static.mlcdn.com.br/1500x1500/smartphone-samsung-galaxy-s20-fe-128gb-cloud-navy-4g-6gb-ram-tela-65-cam-tripla-selfie-32mp/magazineluiza/155629800/0007bbdc665749ec107d860c3a4b8b2f.jpg"
+}
+
+### Update Product
+PUT {{base}}/1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "image": "https://static.netshoes.com.br/produtos/bola-de-futebol-campo-adidas-starlancer/28/NQQ-7534-028/NQQ-7534-028_zoom2.jpg?ts=1610987682&ims=326x"
 }
 
 ### Delete Product

@@ -5,11 +5,12 @@ const Rating = require('../models/rating')
 module.exports = ratingRoutes
 
 function ratingRoutes(server) {
-    server.get('/rating', getRatings)
-    server.get('/rating/:id', getRating)
-    server.post('/rating', saveRating)
-    server.put('/rating/:id', updateRating)
-    server.del('/rating/:id', deleteRating)
+    server.get('/ratings', getRatings)
+    server.get('/ratings/:id', getRating)
+    server.get('/ratings/products/:id', getProductRating)
+    server.post('/ratings', saveRating)
+    server.put('/ratings/:id', updateRating)
+    server.del('/ratings/:id', deleteRating)
 }
 
 function getRatings(_, res, next) {
@@ -21,6 +22,13 @@ function getRatings(_, res, next) {
 
 function getRating(req, res, next) {
     Rating.findById(req.params.id).then(rating => {
+        res.send(rating)
+        next()
+    }).catch(error => next(new errors.ResourceNotFoundError(error)))
+}
+
+function getProductRating(req, res, next) {
+    Rating.find({productId: req.params.id}).then(rating => {
         res.send(rating)
         next()
     }).catch(error => next(new errors.ResourceNotFoundError(error)))

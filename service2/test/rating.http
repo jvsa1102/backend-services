@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 @url = http://localhost:3002/rating
+=======
+@url = http://localhost:3002/ratings
+>>>>>>> 0f5249ac9afc73b83c528db67e7d3bc0d6d5d748
 
 ### Get All Ratings
 GET {{url}}
 
 
 ### Get Single Ratings
-GET {{url}}/61b77c34bb7968b1c861e5aa
+GET {{url}}/1
+
+
+### Get Rating by productId
+GET {{url}}/products/1
 
 
 ### Create Rating
@@ -13,21 +21,21 @@ POST {{url}}
 Content-Type: application/json
 
 {
-    "productId": 5678,
-    "userId": 5678,
+    "productId": 1,
+    "userId": 2,
     "score": 5,
-    "message": "Ótimo"
+    "message": "Show de bola!"
 }
 
 
 ### Update Rating
-PUT {{url}}/61b77c34bb7968b1c861e5aa
+PUT {{url}}/1
 Content-Type: application/json
 
 {
-    "score": 5
+    "message": "Muito bom"
 }
 
 
 ### Remove Rating
-DELETE {{url}}/61b77c34bb7968b1c861e5aa
+DELETE {{url}}/1

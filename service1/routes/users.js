@@ -26,8 +26,9 @@ router.post('/login', async (req, res) => {
     if(!user) return res.status(404).json();
     console.log(user);
     const present_time = new Date();
+    user.password = ''
     let payload = {
-        user: {name: user.name, email: user.email},
+        user,
         loggedIn: present_time,
         expiresIn: new Date(present_time.getTime() + timeout * 1000)
     };
@@ -44,7 +45,8 @@ router.post('/login', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         let user = await User.create(req.body);
-        return res.json({name: user.name, email: user.email});
+        user.password = ''
+        return res.json(user);
     } catch (error) {
         console.log(error)
         return res.status(400).json(error);

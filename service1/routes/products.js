@@ -10,7 +10,7 @@ router.get('/', /*jwt_authenticate, user_authorize,*/ async (req, res, next) => 
     return res.json(await Product.findAll());
 });
 
-router.get('/:id', jwt_authenticate, async (req, res) => {
+router.get('/:id', async (req, res) => {
     let product = await Product.findByPk(req.params.id)
 
     if (!product) return res.status(404).json()

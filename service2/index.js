@@ -8,6 +8,13 @@ const server = restify.createServer({
     version: config.version,
 })
 
+server.use(
+    function crossOrigin(req,res,next){
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "X-Requested-With");
+        return next();
+    }
+);
 server.use(restify.plugins.jsonBodyParser({mapParams: true}))
 server.use(restify.plugins.acceptParser(server.acceptable))
 server.use(restify.plugins.queryParser({mapParams: true}))
